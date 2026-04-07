@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optimization</title>
 
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --hover: #f0f1f3;
+      --max-width: 900px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar .container {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .back {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    main .container {
+      padding: 40px 0 60px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 6px;
+    }
+
+    .item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item a {
+      font-weight: 600;
+    }
+
+    .item a:hover {
+      text-decoration: underline;
+    }
+
+    .desc {
+      margin-top: 4px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="title">Statistics</div>
+      <a class="back" href="index.html">← Back</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- ========== introduction========== -->
+      <section class="section">
+        <h1>Introductionary Readings</h1>
+
+        <div class="item">
+          <a href="https://pages.stat.wisc.edu/~shao/stat610/Casella_Berger_Statistical_Inference.pdf" target="_blank">
+            Statistics inference
+          </a>
+          <div class="desc">
+            Statistics inference
+          </div>
+        </div>
+
+
+
+        <div class="item">
+          <a href="https://www.sas.upenn.edu/~fdiebold/NoHesitations/BookAdvanced.pdff" target="_blank">
+            The Elements of Statistics Learning
+          </a>
+          <div class="desc">
+            The Elements of Statistics Learning
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>
