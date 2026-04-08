@@ -87,6 +87,17 @@
       color: var(--muted);
       line-height: 1.4;
     }
+
+
+    .meta {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #444;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
   </style>
 </head>
 
@@ -181,9 +192,14 @@
         <h1>Optimization Theory</h1>
 
         <div class="item">
+          
           <a href="itlp.pdf" target="_blank">
-            Introduction to linear Optimization, Bertsimas, Dimitris, and John N. Tsitsiklis.
+            Bertsimas, Dimitris, and John N. Tsitsiklis. Introduction to linear optimization. Vol. 6. Belmont, MA: Athena scientific, 1997.
           </a>
+          <div class="meta">
+            <span><strong>Recommendation:</strong> ★☆☆☆☆</span>
+            <span><strong>Difficulty:</strong> ★★★★★</span>
+          </div>
           <div class="desc">
             Highly recommended
           </div>
@@ -192,13 +208,30 @@
           </div>
           <div class="desc">
             It introduces more advanced perspectives in the later chapters. It discusses interior-point methods and touches on fundamental ideas in integer linear programming, effectively bridging linear and nonlinear optimization viewpoints.
- 
+          </div> 
         </div>        
-
+        
+        <div class="item">
+          <a href="https://web.stanford.edu/class/msande310/310trialtext.pdf" target="_blank">
+            Luenberger, David G., and Yinyu Ye.Linear and nonlinear programming. Vol. 2. Reading, MA: Addison-wesley, 1984.
+          </a>
+          <div class="meta">
+            <span><strong>Recommendation:</strong> ★☆☆☆☆</span>
+            <span><strong>Difficulty:</strong> ★★★★★</span>
+          </div>
+          <div class="desc">
+            For anyone interested in optimization algorithms, this is an excellent book to begin with. It starts from linear programming, moves into nonlinear optimization and offers a thorough treatment of several major algorithmic frameworks. The book includes many concrete examples.
+          </div>
+        </div>
+        
         <div class="item">
           <a href="https://shuyuej.com/books/Lectures%20on%20Convex%20Optimization.pdf" target="_blank">
-            Lectures on Convex Optimization, Yurii Nesterov
+            Nesterov, Yurii. Lectures on convex optimization. Vol. 137. Berlin: Springer International Publishing, 2018.
           </a>
+          <div class="meta">
+            <span><strong>Recommendation:</strong> ★☆☆☆☆</span>
+            <span><strong>Difficulty:</strong> ★★★★★</span>
+          </div>          
           <div class="desc">
             Convering smooth optimization, non smooth optimization, second methods and structural optimization
           </div>
@@ -206,15 +239,33 @@
         
         <div class="item">
           <a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf" target="_blank">
-            Convex Optimization, Stephen P.Boyd
+            Boyd, Stephen, and Lieven Vandenberghe. Convex optimization. Cambridge university press, 2004.
           </a>
+          <div class="meta">
+            <span><strong>Recommendation:</strong> ★☆☆☆☆</span>
+            <span><strong>Difficulty:</strong> ★★★★★</span>
+          </div>          
           <div class="desc">
             Take it as a dictionary.
           </div>
         </div>
       </section>
 
-
+        <div class="item">
+          <a href="https://shuyuej.com/books/Numerical%20Optimization.pdf" target="_blank">
+            Nocedal, Jorge, and Stephen Wright.Numerical optimization. Springer Science & Business Media, 2006.
+          </a>
+          <div class="meta">
+            <span><strong>Recommendation:</strong> ★☆☆☆☆</span>
+            <span><strong>Difficulty:</strong> ★★★★★</span>
+          </div>          
+          <div class="desc">
+            For readers with some background in numerical analysis, this is also a book worth recommending. It is perhaps one of the clearest references available for classifying and introducing the major classical optimization algorithms. 
+          </div>
+          <div class="desc">
+            However, the book is not systematic in its organization. Use it as a reference book and turn to specific chapters when needed.
+          </div>          
+        </div>
 
     </div>
   </main>
