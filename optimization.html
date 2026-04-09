@@ -73,14 +73,33 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .item a {
-      display: inline-block;
+    .title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .book-title {
       font-weight: 600;
       line-height: 1.35;
     }
 
-    .item a:hover {
+    .access-link {
+      font-size: 0.9rem;
+      color: var(--muted);
       text-decoration: underline;
+      white-space: nowrap;
+    }
+
+    .access-link:hover {
+      color: var(--text);
+    }
+
+    .no-access {
+      font-size: 0.9rem;
+      color: #8a8a8a;
+      white-space: nowrap;
     }
 
     .author {
@@ -138,9 +157,10 @@
         <h1>Introductory Learning</h1>
 
         <div class="item">
-          <a href="https://arxiv.org/abs/1609.04747" target="_blank">
-            An Overview of Gradient Descent Optimization Algorithms
-          </a>
+          <div class="title-row">
+            <div class="book-title">An Overview of Gradient Descent Optimization Algorithms</div>
+            <a class="access-link" href="https://arxiv.org/abs/1609.04747" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Sebastian Ruder</div>
           <div class="desc">
             Covers GD, SGD, NAG, Adam, and other important first-order methods. A good place to begin.
@@ -151,9 +171,10 @@
         </div>
 
         <div class="item">
-          <a href="https://web.stanford.edu/~sidford/courses/19fa_opt_theory/sidford_mse213_2019fa_chap_2_smoothness.pdf" target="_blank">
-            Smooth Functions
-          </a>
+          <div class="title-row">
+            <div class="book-title">Smooth Functions</div>
+            <a class="access-link" href="https://web.stanford.edu/~sidford/courses/19fa_opt_theory/sidford_mse213_2019fa_chap_2_smoothness.pdf" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Aaron Sidford (course notes)</div>
           <div class="desc">
             A quick introduction to L-smoothness and the gradient method. You will see basic bounds and convergence rates.
@@ -161,9 +182,10 @@
         </div>
 
         <div class="item">
-          <a href="https://arxiv.org/pdf/1608.04636" target="_blank">
-            Linear Convergence of Gradient and Proximal-Gradient Methods Under the Polyak–Łojasiewicz Condition
-          </a>
+          <div class="title-row">
+            <div class="book-title">Linear Convergence of Gradient and Proximal-Gradient Methods Under the Polyak–Łojasiewicz Condition</div>
+            <a class="access-link" href="https://arxiv.org/pdf/1608.04636" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Hamed Karimi, Julie Nutini, and Mark Schmidt</div>
           <div class="desc">
             A good warm start.
@@ -174,9 +196,10 @@
         </div>
 
         <div class="item">
-          <a href="https://www.youtube.com/@sergiybutenko" target="_blank">
-            Introductory Online Courses on Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Introductory Online Courses on Optimization</div>
+            <a class="access-link" href="https://www.youtube.com/@sergiybutenko" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Sergiy Butenko</div>
           <div class="desc">
             Covers introductory optimization, Operations Research I, linear programming, integer programming (partially), and survey-style material.
@@ -184,9 +207,10 @@
         </div>
 
         <div class="item">
-          <a href="https://xingyuzhou.org/blog/" target="_blank">
-            Xingyu Zhou's Blog
-          </a>
+          <div class="title-row">
+            <div class="book-title">Xingyu Zhou's Blog</div>
+            <a class="access-link" href="https://xingyuzhou.org/blog/" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Xingyu Zhou</div>
           <div class="desc">
             A very good refresh.
@@ -197,9 +221,10 @@
         </div>
 
         <div class="item">
-          <a href="https://www.seas.ucla.edu/~vandenbe/236C/lectures/" target="_blank">
-            UCLA Teaching Material
-          </a>
+          <div class="title-row">
+            <div class="book-title">UCLA Teaching Material</div>
+            <a class="access-link" href="https://www.seas.ucla.edu/~vandenbe/236C/lectures/" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Lieven Vandenberghe (course materials)</div>
           <div class="desc">
             More generic course material, but still useful.
@@ -211,9 +236,10 @@
         <h1>Optimization Theory</h1>
 
         <div class="item">
-          <a href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/introduaction-to-LP-and-nonlinear-programming.pdf" target="_blank">
-            Introduction to Linear Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Introduction to Linear Optimization</div>
+            <a class="access-link" href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/introduaction-to-LP-and-nonlinear-programming.pdf" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Dimitris Bertsimas and John N. Tsitsiklis</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
@@ -231,9 +257,10 @@
         </div>
 
         <div class="item">
-          <a href="https://web.stanford.edu/class/msande310/310trialtext.pdf" target="_blank">
-            Linear and Nonlinear Programming
-          </a>
+          <div class="title-row">
+            <div class="book-title">Linear and Nonlinear Programming</div>
+            <a class="access-link" href="https://web.stanford.edu/class/msande310/310trialtext.pdf" target="_blank">[PDF]</a>
+          </div>
           <div class="author">David G. Luenberger and Yinyu Ye</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -248,9 +275,10 @@
         </div>
 
         <div class="item">
-          <a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf" target="_blank">
-            Convex Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Convex Optimization</div>
+            <a class="access-link" href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Stephen Boyd and Lieven Vandenberghe</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -262,9 +290,10 @@
         </div>
 
         <div class="item">
-          <a href="https://shuyuej.com/books/Lectures%20on%20Convex%20Optimization.pdf" target="_blank">
-            Lectures on Convex Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Lectures on Convex Optimization</div>
+            <a class="access-link" href="https://shuyuej.com/books/Lectures%20on%20Convex%20Optimization.pdf" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Yurii Nesterov</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
@@ -279,9 +308,10 @@
         </div>
 
         <div class="item">
-          <a href="https://shuyuej.com/books/Numerical%20Optimization.pdf" target="_blank">
-            Numerical Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Numerical Optimization</div>
+            <a class="access-link" href="https://shuyuej.com/books/Numerical%20Optimization.pdf" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Jorge Nocedal and Stephen Wright</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
@@ -299,9 +329,10 @@
         </div>
 
         <div class="item">
-          <a href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/Integer-and-Combinatorial-Optimization.pdf" target="_blank">
-            Integer and Combinatorial Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Integer and Combinatorial Optimization</div>
+            <a class="access-link" href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/Integer-and-Combinatorial-Optimization.pdf" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Laurence A. Wolsey and George L. Nemhauser</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
@@ -320,9 +351,10 @@
         <h1>Honorable Mentions</h1>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Robust Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Robust Optimization</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Aharon Ben-Tal, Laurent El Ghaoui, and Arkadi Nemirovski</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★☆☆☆</span></span>
@@ -340,9 +372,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Network Flows: Theory, Algorithms, and Applications
-          </a>
+          <div class="title-row">
+            <div class="book-title">Network Flows: Theory, Algorithms, and Applications</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Ravindra K. Ahuja, Thomas L. Magnanti, and James B. Orlin</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
@@ -360,9 +393,10 @@
         </div>
 
         <div class="item">
-          <a href="https://arxiv.org/abs/1909.05207" target="_blank">
-            Introduction to Online Convex Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Introduction to Online Convex Optimization</div>
+            <a class="access-link" href="https://arxiv.org/abs/1909.05207" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Elad Hazan</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
@@ -377,9 +411,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Lectures on Modern Convex Optimization
-          </a>
+          <div class="title-row">
+            <div class="book-title">Lectures on Modern Convex Optimization</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Aharon Ben-Tal and Arkadi Nemirovski</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★☆☆☆☆</span></span>
@@ -394,9 +429,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Lectures on Stochastic Programming: Modeling and Theory
-          </a>
+          <div class="title-row">
+            <div class="book-title">Lectures on Stochastic Programming: Modeling and Theory</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Alexander Shapiro, Darinka Dentcheva, and Andrzej Ruszczyński</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
@@ -414,9 +450,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Finite-Dimensional Variational Inequalities and Complementarity Problems
-          </a>
+          <div class="title-row">
+            <div class="book-title">Finite-Dimensional Variational Inequalities and Complementarity Problems</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Francisco Facchinei and Jong-Shi Pang</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
@@ -434,9 +471,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Semidefinite Optimization and Convex Algebraic Geometry
-          </a>
+          <div class="title-row">
+            <div class="book-title">Semidefinite Optimization and Convex Algebraic Geometry</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Grigoriy Blekherman, Pablo A. Parrilo, and Rekha R. Thomas (eds.)</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★☆☆☆☆</span></span>
@@ -458,9 +496,10 @@
         <h1>(Non)convex Analysis</h1>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Convex Analysis
-          </a>
+          <div class="title-row">
+            <div class="book-title">Convex Analysis</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">R. Tyrrell Rockafellar</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
@@ -478,9 +517,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Variational Analysis
-          </a>
+          <div class="title-row">
+            <div class="book-title">Variational Analysis</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">R. Tyrrell Rockafellar and Roger J-B. Wets</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
@@ -495,9 +535,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Nonlinear Programming
-          </a>
+          <div class="title-row">
+            <div class="book-title">Nonlinear Programming</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Dimitri P. Bertsekas</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -512,9 +553,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Convex Optimization Theory
-          </a>
+          <div class="title-row">
+            <div class="book-title">Convex Optimization Theory</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Dimitri P. Bertsekas</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -529,9 +571,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Convex Optimization Algorithms
-          </a>
+          <div class="title-row">
+            <div class="book-title">Convex Optimization Algorithms</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Dimitri P. Bertsekas</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -550,9 +593,10 @@
         <h1>Probability for Optimization</h1>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Introduction to Probability
-          </a>
+          <div class="title-row">
+            <div class="book-title">Introduction to Probability</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Dimitri P. Bertsekas and John N. Tsitsiklis</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -567,9 +611,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Probability: Theory and Examples
-          </a>
+          <div class="title-row">
+            <div class="book-title">Probability: Theory and Examples</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Rick Durrett</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -584,9 +629,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Bandit Algorithms
-          </a>
+          <div class="title-row">
+            <div class="book-title">Bandit Algorithms</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Tor Lattimore and Csaba Szepesvári</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -601,9 +647,10 @@
         </div>
 
         <div class="item">
-          <a href="https://arxiv.org/abs/1904.07272" target="_blank">
-            Introduction to Multi-Armed Bandits
-          </a>
+          <div class="title-row">
+            <div class="book-title">Introduction to Multi-Armed Bandits</div>
+            <a class="access-link" href="https://arxiv.org/abs/1904.07272" target="_blank">[PDF]</a>
+          </div>
           <div class="author">Aleksandrs Slivkins</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
@@ -622,9 +669,10 @@
         <h1>Dynamic Programming, Optimal Control, and Reinforcement Learning</h1>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Neuro-Dynamic Programming
-          </a>
+          <div class="title-row">
+            <div class="book-title">Neuro-Dynamic Programming</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Dimitri P. Bertsekas and John N. Tsitsiklis</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
@@ -642,9 +690,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Dynamic Programming and Optimal Control
-          </a>
+          <div class="title-row">
+            <div class="book-title">Dynamic Programming and Optimal Control</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Dimitri P. Bertsekas</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
@@ -659,9 +708,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Abstract Dynamic Programming
-          </a>
+          <div class="title-row">
+            <div class="book-title">Abstract Dynamic Programming</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Dimitri P. Bertsekas</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
@@ -676,9 +726,10 @@
         </div>
 
         <div class="item">
-          <a href="#" target="_blank">
-            Approximate Dynamic Programming: Solving the Curses of Dimensionality
-          </a>
+          <div class="title-row">
+            <div class="book-title">Approximate Dynamic Programming: Solving the Curses of Dimensionality</div>
+            <span class="no-access">no access</span>
+          </div>
           <div class="author">Warren B. Powell</div>
           <div class="meta">
             <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
