@@ -8,6 +8,7 @@
   <style>
     :root {
       --bg: #f7f7f8;
+      --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
       --line: #e5e7eb;
@@ -34,6 +35,7 @@
 
     .topbar {
       border-bottom: 1px solid var(--line);
+      background: var(--bg);
     }
 
     .topbar .container {
@@ -54,23 +56,65 @@
     }
 
     main .container {
-      padding: 40px 0 60px;
+      padding: 32px 0 60px;
     }
 
     .section {
-      margin-bottom: 48px;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+      overflow: hidden;
     }
 
-    .section h1 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+    .section summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 20px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .section summary:hover {
+      background: var(--hover);
+    }
+
+    .section summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      color: var(--muted);
+      line-height: 1;
+      margin-left: 16px;
+      flex-shrink: 0;
+    }
+
+    .section[open] summary::after {
+      content: "−";
+    }
+
+    .section[open] summary {
       border-bottom: 1px solid var(--line);
-      padding-bottom: 6px;
+    }
+
+    .section-content {
+      padding: 0 20px 8px;
     }
 
     .item {
       padding: 16px 0;
       border-bottom: 1px solid var(--line);
+    }
+
+    .item:last-child {
+      border-bottom: none;
     }
 
     .title-row {
@@ -153,611 +197,604 @@
   <main>
     <div class="container">
 
-
-            <!-- ========== introduction========== -->
-      <section class="section">
-        <h1>Introductory Learning</h1>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">An Overview of Gradient Descent Optimization Algorithms</div>
-            <a class="access-link" href="https://arxiv.org/pdf/1609.04747" target="_blank">[PDF]</a>
+      <details class="section">
+        <summary>Introductory Learning</summary>
+        <div class="section-content">
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">An Overview of Gradient Descent Optimization Algorithms</div>
+              <a class="access-link" href="https://arxiv.org/pdf/1609.04747" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Sebastian Ruder</div>
+            <div class="desc">
+              Covers GD, SGD, NAG, Adam, and other important first-order methods. A good place to begin.
+            </div>
+            <div class="desc">
+              However, this overview does not discuss convergence rates or error analysis.
+            </div>
           </div>
-          <div class="author">Sebastian Ruder</div>
-          <div class="desc">
-            Covers GD, SGD, NAG, Adam, and other important first-order methods. A good place to begin.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Smooth Functions</div>
+              <a class="access-link" href="https://web.stanford.edu/~sidford/courses/19fa_opt_theory/sidford_mse213_2019fa_chap_2_smoothness.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Aaron Sidford (course notes)</div>
+            <div class="desc">
+              A quick introduction to L-smoothness and the gradient method. You will see basic bounds and convergence rates.
+            </div>
           </div>
-          <div class="desc">
-            However, this overview does not discuss convergence rates or error analysis.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Linear Convergence of Gradient and Proximal-Gradient Methods Under the Polyak–Łojasiewicz Condition</div>
+              <a class="access-link" href="https://arxiv.org/pdf/1608.04636" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Hamed Karimi, Julie Nutini, and Mark Schmidt</div>
+            <div class="desc">
+              A good warm start.
+            </div>
+            <div class="desc">
+              The appendix is especially important, and one can even start from there.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Introductory Online Courses on Optimization</div>
+              <a class="access-link" href="https://www.youtube.com/@sergiybutenko" target="_blank">[Courses]</a>
+            </div>
+            <div class="author">Sergiy Butenko</div>
+            <div class="desc">
+              Covers introductory optimization, Operations Research I, linear programming, integer programming (partially), and survey-style material.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Xingyu Zhou's Blog</div>
+              <a class="access-link" href="https://xingyuzhou.org/blog/" target="_blank">[Website]</a>
+            </div>
+            <div class="author">Xingyu Zhou</div>
+            <div class="desc">
+              A very good refresh.
+            </div>
+            <div class="desc">
+              A collection of concise research notes on optimization and learning theory, covering topics such as differential privacy, convex analysis, and bandit algorithms.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">UCLA Teaching Material</div>
+              <a class="access-link" href="https://www.seas.ucla.edu/~vandenbe/236C/lectures/" target="_blank">[Website]</a>
+            </div>
+            <div class="author">Lieven Vandenberghe (course materials)</div>
+            <div class="desc">
+              More generic course material, but still useful.
+            </div>
           </div>
         </div>
+      </details>
 
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Smooth Functions</div>
-            <a class="access-link" href="https://web.stanford.edu/~sidford/courses/19fa_opt_theory/sidford_mse213_2019fa_chap_2_smoothness.pdf" target="_blank">[PDF]</a>
+      <details class="section">
+        <summary>Optimization Theory</summary>
+        <div class="section-content">
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Introduction to Linear Optimization</div>
+              <a class="access-link" href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/introduaction-to-LP-and-nonlinear-programming.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Dimitris Bertsimas and John N. Tsitsiklis</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★☆☆</span></span>
+            </div>
+            <div class="desc">
+              Highly recommended.
+            </div>
+            <div class="desc">
+              The book starts from linear programming and gradually uncovers duality. It provides a clear and intuitive exploration of why duality arises within the LP framework, and later extends the discussion to Lagrangian duality.
+            </div>
+            <div class="desc">
+              It also introduces more advanced perspectives in the later chapters, including interior-point methods and basic ideas in integer linear programming, effectively bridging linear and nonlinear optimization viewpoints.
+            </div>
           </div>
-          <div class="author">Aaron Sidford (course notes)</div>
-          <div class="desc">
-            A quick introduction to L-smoothness and the gradient method. You will see basic bounds and convergence rates.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Linear and Nonlinear Programming</div>
+              <a class="access-link" href="https://web.stanford.edu/class/msande310/310trialtext.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">David G. Luenberger and Yinyu Ye</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              An excellent book to begin with for readers interested in optimization algorithms.
+            </div>
+            <div class="desc">
+              It starts from linear programming, moves into nonlinear optimization, and offers a thorough treatment of several major algorithmic frameworks. The book also includes many concrete examples.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Convex Optimization</div>
+              <a class="access-link" href="cvxop.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Stephen Boyd and Lieven Vandenberghe</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★☆☆</span></span>
+            </div>
+            <div class="desc">
+              Take it as a dictionary.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Lectures on Convex Optimization</div>
+              <a class="access-link" href="https://shuyuej.com/books/Lectures%20on%20Convex%20Optimization.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Yurii Nesterov</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              For readers who want to pursue research in convex optimization.
+            </div>
+            <div class="desc">
+              It has both depth and breadth. The only potential difficulty is that it is written in a more abstract style, but the viewpoint is correspondingly higher.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Numerical Optimization</div>
+              <a class="access-link" href="https://shuyuej.com/books/Numerical%20Optimization.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Jorge Nocedal and Stephen Wright</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              For readers with some background in numerical analysis, this is also a book worth recommending.
+            </div>
+            <div class="desc">
+              It is one of the clearest references for classifying and introducing the major classical optimization algorithms.
+            </div>
+            <div class="desc">
+              However, it is not especially systematic in organization. It is better used as a reference book than read cover to cover.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Integer and Combinatorial Optimization</div>
+              <a class="access-link" href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/Integer-and-Combinatorial-Optimization.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Laurence A. Wolsey and George L. Nemhauser</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              This book is enough for combinatorial optimization.
+            </div>
+            <div class="desc">
+              Combinatorial optimization is difficult. Please be cautious before going deeply into this field.
+            </div>
           </div>
         </div>
+      </details>
 
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Linear Convergence of Gradient and Proximal-Gradient Methods Under the Polyak–Łojasiewicz Condition</div>
-            <a class="access-link" href="https://arxiv.org/pdf/1608.04636" target="_blank">[PDF]</a>
+      <details class="section">
+        <summary>Honorable Mentions</summary>
+        <div class="section-content">
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Robust Optimization</div>
+              <a class="access-link" href="https://www2.isye.gatech.edu/~nemirovs/FullBookDec11.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Aharon Ben-Tal, Laurent El Ghaoui, and Arkadi Nemirovski</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★☆☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              A classic text by three pioneers of robust optimization, but not an ideal entry point for beginners.
+            </div>
+            <div class="desc">
+              Parts of the exposition are opaque, and the book no longer reflects many later developments, especially in distributionally robust and adaptive multi-stage optimization.
+            </div>
+            <div class="desc">
+              For most readers, papers may be a better starting point.
+            </div>
           </div>
-          <div class="author">Hamed Karimi, Julie Nutini, and Mark Schmidt</div>
-          <div class="desc">
-            A good warm start.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Network Flows: Theory, Algorithms, and Applications</div>
+              <a class="access-link" href="NetworkFlows.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Ravindra K. Ahuja, Thomas L. Magnanti, and James B. Orlin</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              An encyclopedic reference on network flows by three major scholars in the field.
+            </div>
+            <div class="desc">
+              Its ambition is impressive, but the first edition contains a substantial number of errors, and no definitive revised edition has appeared.
+            </div>
+            <div class="desc">
+              Best used as a reference book, and read with some critical caution.
+            </div>
           </div>
-          <div class="desc">
-            The appendix is especially important, and one can even start from there.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Introduction to Online Convex Optimization</div>
+              <a class="access-link" href="https://arxiv.org/abs/1909.05207" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Elad Hazan</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              A short and elegant introduction to a highly active area.
+            </div>
+            <div class="desc">
+              The notes combine basic convex optimization, stochastic processes, and ideas from statistical learning, making them a particularly attractive entry point for readers who want to see the appeal of interdisciplinary optimization.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Lectures on Modern Convex Optimization</div>
+              <a class="access-link" href="LecturesonMordenConvexOptimizationAnalysis.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Aharon Ben-Tal and Arkadi Nemirovski</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★☆☆☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              A famously difficult book, perhaps the hardest optimization text I have read.
+            </div>
+            <div class="desc">
+              Its perspective is extremely high-level and offers a unified framework for understanding robust optimization and many deterministic optimization problems, but it is best suited to readers who actively want a serious technical challenge.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Lectures on Stochastic Programming: Modeling and Theory</div>
+              <a class="access-link" href="https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/4/1470/files/2021/03/SPbook.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Alexander Shapiro, Darinka Dentcheva, and Andrzej Ruszczyński</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              A major work in stochastic optimization.
+            </div>
+            <div class="desc">
+              The book is demanding, and many of its examples are abstract, so readers will benefit from a solid background in analysis and probability, ideally including measure-theoretic probability.
+            </div>
+            <div class="desc">
+              Essential for readers seriously interested in stochastic optimization.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Finite-Dimensional Variational Inequalities and Complementarity Problems</div>
+              <a class="access-link" href="FDVIACP1.pdf" target="_blank">[volume 1]</a>
+              <a class="access-link" href="FDVIACP2.pdf" target="_blank">[volume 2]</a>
+            </div>
+            <div class="author">Francisco Facchinei and Jong-Shi Pang</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              A foundational work on variational inequalities.
+            </div>
+            <div class="desc">
+              Since every convex optimization problem admits an equivalent variational inequality formulation, this viewpoint is often extremely powerful: it naturally encodes first-order information and can be analytically fruitful.
+            </div>
+            <div class="desc">
+              Even readers who do not study the whole book may benefit from learning this perspective.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Semidefinite Optimization and Convex Algebraic Geometry</div>
+              <a class="access-link" href="https://www.mit.edu/~parrilo/sdocag/MO13-Blekherman-Parrilo-Thomas.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Grigoriy Blekherman, Pablo A. Parrilo, and Rekha R. Thomas (eds.)</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★☆☆☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              A deep and specialized volume by major figures in semidefinite optimization.
+            </div>
+            <div class="desc">
+              Like variational inequalities, this is a field with fewer researchers but substantial depth.
+            </div>
+            <div class="desc">
+              It is best suited to readers with a strong algebraic background and is not a natural starting point for most beginners.
+            </div>
           </div>
         </div>
+      </details>
 
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Introductory Online Courses on Optimization</div>
-            <a class="access-link" href="https://www.youtube.com/@sergiybutenko" target="_blank">[Courses]</a>
+      <details class="section">
+        <summary>(Non)convex Analysis</summary>
+        <div class="section-content">
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Convex Analysis</div>
+              <a class="access-link" href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/convex-analysis.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">R. Tyrrell Rockafellar</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              One of the great classics on this list.
+            </div>
+            <div class="desc">
+              For optimization and operations research researchers, convex analysis can feel like a dragon-slaying art: abstract, difficult, but immensely powerful.
+            </div>
+            <div class="desc">
+              Even today, many lemmas and theorems from this book continue to generate new research across optimization, OR, management science, mathematics, and computer science.
+            </div>
           </div>
-          <div class="author">Sergiy Butenko</div>
-          <div class="desc">
-            Covers introductory optimization, Operations Research I, linear programming, integer programming (partially), and survey-style material.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Variational Analysis</div>
+              <a class="access-link" href="VariationalAnalysis.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">R. Tyrrell Rockafellar and Roger J-B. Wets</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              A monumental follow-up that moves beyond convexity and develops a broad framework for nonconvex analysis.
+            </div>
+            <div class="desc">
+              Like <em>Convex Analysis</em>, it is a masterwork, but it is even more demanding and best approached by readers who already have some maturity in analysis and optimization theory.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Nonlinear Programming</div>
+              <a class="access-link" href="Nonlinearprogramming.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Dimitri P. Bertsekas</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              Although the title suggests optimization, this book is in many ways also a book about analysis.
+            </div>
+            <div class="desc">
+              Bertsekas develops nonlinear programming with substantial analytical depth, making it valuable for readers who want more than a purely algorithmic treatment.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Convex Optimization Theory</div>
+              <a class="access-link" href="https://web.mit.edu/dimitrib/www/Convex_Theory_Entire_Book.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Dimitri P. Bertsekas</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              A rigorous and analysis-heavy treatment of convex optimization.
+            </div>
+            <div class="desc">
+              Despite the title, this is closer in spirit to convex analysis than to a standard algorithms text, and is particularly rewarding for readers who prefer a more theoretical and abstract viewpoint.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Convex Optimization Algorithms</div>
+              <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Dimitri P. Bertsekas</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★☆☆</span></span>
+            </div>
+            <div class="desc">
+              The most accessible of Bertsekas’s major convex optimization books.
+            </div>
+            <div class="desc">
+              The viewpoint remains analytical, but the presentation is more algorithmically oriented and easier to enter than his more theory-focused texts.
+            </div>
           </div>
         </div>
+      </details>
 
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Xingyu Zhou's Blog</div>
-            <a class="access-link" href="https://xingyuzhou.org/blog/" target="_blank">[Website]</a>
+      <details class="section">
+        <summary>Probability for Optimization</summary>
+        <div class="section-content">
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Introduction to Probability</div>
+              <a class="access-link" href="https://www.vfu.bg/en/e-Learning/Math--Bertsekas_Tsitsiklis_Introduction_to_probability.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Dimitri P. Bertsekas and John N. Tsitsiklis</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★☆☆☆</span></span>
+            </div>
+            <div class="desc">
+              A very accessible introduction to probability, suitable even for first-year undergraduates.
+            </div>
+            <div class="desc">
+              It avoids measure theory but does an excellent job of building probabilistic intuition, which is often just as important as formalism in early study.
+            </div>
           </div>
-          <div class="author">Xingyu Zhou</div>
-          <div class="desc">
-            A very good refresh.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Probability: Theory and Examples</div>
+              <a class="access-link" href="https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Rick Durrett</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
+            </div>
+            <div class="desc">
+              A standard and highly respected measure-theoretic probability text.
+            </div>
+            <div class="desc">
+              For research-oriented readers, especially those who need martingale methods and modern probability, this is an excellent choice—though it asks for more mathematical maturity than many alternatives.
+            </div>
           </div>
-          <div class="desc">
-            A collection of concise research notes on optimization and learning theory, covering topics such as differential privacy, convex analysis, and bandit algorithms.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Bandit Algorithms</div>
+              <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Tor Lattimore and Csaba Szepesvári</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              A very strong modern reference on multi-armed bandits, bringing together a large body of theoretical results in one place.
+            </div>
+            <div class="desc">
+              Bandits remain lively, with strong links to reinforcement learning and growing industrial relevance.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Introduction to Multi-Armed Bandits</div>
+              <a class="access-link" href="https://arxiv.org/abs/1904.07272" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Aleksandrs Slivkins</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★☆☆</span></span>
+            </div>
+            <div class="desc">
+              A more accessible alternative to <em>Bandit Algorithms</em>.
+            </div>
+            <div class="desc">
+              It is less comprehensive, but still a very good entry point before moving to the fuller treatment.
+            </div>
           </div>
         </div>
+      </details>
 
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">UCLA Teaching Material</div>
-            <a class="access-link" href="https://www.seas.ucla.edu/~vandenbe/236C/lectures/" target="_blank">[Website]</a>
+      <details class="section">
+        <summary>Dynamic Programming, Optimal Control, and Reinforcement Learning</summary>
+        <div class="section-content">
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Neuro-Dynamic Programming</div>
+              <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Dimitri P. Bertsekas and John N. Tsitsiklis</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              One of the most underrated books in this area.
+            </div>
+            <div class="desc">
+              Long before deep reinforcement learning became fashionable, this book already developed a framework for approximating value functions and policies with function approximators.
+            </div>
+            <div class="desc">
+              It remains deeply relevant for readers who want a theory-oriented view of RL and dynamic programming.
+            </div>
           </div>
-          <div class="author">Lieven Vandenberghe (course materials)</div>
-          <div class="desc">
-            More generic course material, but still useful.
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Dynamic Programming and Optimal Control</div>
+              <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Dimitri P. Bertsekas</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              A comprehensive and influential treatment of dynamic programming and optimal control.
+            </div>
+            <div class="desc">
+              It is extensive and detailed, making it a standard reference, though some readers may prefer a shorter and more conceptually concentrated entry point.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Abstract Dynamic Programming</div>
+              <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Dimitri P. Bertsekas</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              A concise and high-level treatment of dynamic programming from an operator-theoretic viewpoint.
+            </div>
+            <div class="desc">
+              For readers who want to understand what dynamic programming is really doing at a structural level, this is exceptionally insightful.
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="title-row">
+              <div class="book-title">Approximate Dynamic Programming: Solving the Curses of Dimensionality</div>
+              <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
+            </div>
+            <div class="author">Warren B. Powell</div>
+            <div class="meta">
+              <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
+              <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
+            </div>
+            <div class="desc">
+              A major book on approximate dynamic programming by one of the central figures in the field.
+            </div>
+            <div class="desc">
+              The tone is generally more approachable than Bertsekas, and it is a valuable companion for readers interested in large-scale sequential decision problems and approximation methods.
+            </div>
           </div>
         </div>
-      </section>
-      <!-- ========== theory========== -->
-      <section class="section">
-        <h1>Optimization Theory</h1>
+      </details>
 
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Introduction to Linear Optimization</div>
-            <a class="access-link" href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/introduaction-to-LP-and-nonlinear-programming.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Dimitris Bertsimas and John N. Tsitsiklis</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★☆☆</span></span>
-          </div>
-          <div class="desc">
-            Highly recommended.
-          </div>
-          <div class="desc">
-            The book starts from linear programming and gradually uncovers duality. It provides a clear and intuitive exploration of why duality arises within the LP framework, and later extends the discussion to Lagrangian duality.
-          </div>
-          <div class="desc">
-            It also introduces more advanced perspectives in the later chapters, including interior-point methods and basic ideas in integer linear programming, effectively bridging linear and nonlinear optimization viewpoints.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Linear and Nonlinear Programming</div>
-            <a class="access-link" href="https://web.stanford.edu/class/msande310/310trialtext.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">David G. Luenberger and Yinyu Ye</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            An excellent book to begin with for readers interested in optimization algorithms.
-          </div>
-          <div class="desc">
-            It starts from linear programming, moves into nonlinear optimization, and offers a thorough treatment of several major algorithmic frameworks. The book also includes many concrete examples.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Convex Optimization</div>
-            <a class="access-link" href="cvxop.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Stephen Boyd and Lieven Vandenberghe</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★☆☆</span></span>
-          </div>
-          <div class="desc">
-            Take it as a dictionary.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Lectures on Convex Optimization</div>
-            <a class="access-link" href="https://shuyuej.com/books/Lectures%20on%20Convex%20Optimization.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Yurii Nesterov</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            For readers who want to pursue research in convex optimization.
-          </div>
-          <div class="desc">
-            It has both depth and breadth. The only potential difficulty is that it is written in a more abstract style, but the viewpoint is correspondingly higher.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Numerical Optimization</div>
-            <a class="access-link" href="https://shuyuej.com/books/Numerical%20Optimization.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Jorge Nocedal and Stephen Wright</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            For readers with some background in numerical analysis, this is also a book worth recommending.
-          </div>
-          <div class="desc">
-            It is one of the clearest references for classifying and introducing the major classical optimization algorithms.
-          </div>
-          <div class="desc">
-            However, it is not especially systematic in organization. It is better used as a reference book than read cover to cover.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Integer and Combinatorial Optimization</div>
-            <a class="access-link" href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/Integer-and-Combinatorial-Optimization.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Laurence A. Wolsey and George L. Nemhauser</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            This book is enough for combinatorial optimization.
-          </div>
-          <div class="desc">
-            Combinatorial optimization is difficult. Please be cautious before going deeply into this field.
-          </div>
-        </div>
-      </section>
-
-
-
-      <!-- ========== honor========== -->
-      
-      <section class="section">
-        <h1>Honorable Mentions</h1>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Robust Optimization</div>
-            <a class="access-link" href="https://www2.isye.gatech.edu/~nemirovs/FullBookDec11.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Aharon Ben-Tal, Laurent El Ghaoui, and Arkadi Nemirovski</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★☆☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            A classic text by three pioneers of robust optimization, but not an ideal entry point for beginners.
-          </div>
-          <div class="desc">
-            Parts of the exposition are opaque, and the book no longer reflects many later developments, especially in distributionally robust and adaptive multi-stage optimization.
-          </div>
-          <div class="desc">
-            For most readers, papers may be a better starting point.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Network Flows: Theory, Algorithms, and Applications</div>
-            <a class="access-link" href="NetworkFlows.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Ravindra K. Ahuja, Thomas L. Magnanti, and James B. Orlin</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            An encyclopedic reference on network flows by three major scholars in the field.
-          </div>
-          <div class="desc">
-            Its ambition is impressive, but the first edition contains a substantial number of errors, and no definitive revised edition has appeared.
-          </div>
-          <div class="desc">
-            Best used as a reference book, and read with some critical caution.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Introduction to Online Convex Optimization</div>
-            <a class="access-link" href="https://arxiv.org/abs/1909.05207" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Elad Hazan</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            A short and elegant introduction to a highly active area.
-          </div>
-          <div class="desc">
-            The notes combine basic convex optimization, stochastic processes, and ideas from statistical learning, making them a particularly attractive entry point for readers who want to see the appeal of interdisciplinary optimization.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Lectures on Modern Convex Optimization</div>
-            <a class="access-link" href="LecturesonMordenConvexOptimizationAnalysis.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Aharon Ben-Tal and Arkadi Nemirovski</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★☆☆☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            A famously difficult book, perhaps the hardest optimization text I have read.
-          </div>
-          <div class="desc">
-            Its perspective is extremely high-level and offers a unified framework for understanding robust optimization and many deterministic optimization problems, but it is best suited to readers who actively want a serious technical challenge.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Lectures on Stochastic Programming: Modeling and Theory</div>
-            <a class="access-link" href="https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/4/1470/files/2021/03/SPbook.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Alexander Shapiro, Darinka Dentcheva, and Andrzej Ruszczyński</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            A major work in stochastic optimization.
-          </div>
-          <div class="desc">
-            The book is demanding, and many of its examples are abstract, so readers will benefit from a solid background in analysis and probability, ideally including measure-theoretic probability.
-          </div>
-          <div class="desc">
-            Essential for readers seriously interested in stochastic optimization.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Finite-Dimensional Variational Inequalities and Complementarity Problems</div>
-            <a class="access-link" href="FDVIACP1.pdf" target="_blank">[volume 1]</a>
-            <a class="access-link" href="FDVIACP2.pdf" target="_blank">[volume 2]</a>
-          </div>
-          <div class="author">Francisco Facchinei and Jong-Shi Pang</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            A foundational work on variational inequalities.
-          </div>
-          <div class="desc">
-            Since every convex optimization problem admits an equivalent variational inequality formulation, this viewpoint is often extremely powerful: it naturally encodes first-order information and can be analytically fruitful.
-          </div>
-          <div class="desc">
-            Even readers who do not study the whole book may benefit from learning this perspective.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Semidefinite Optimization and Convex Algebraic Geometry</div>
-            <a class="access-link" href="https://www.mit.edu/~parrilo/sdocag/MO13-Blekherman-Parrilo-Thomas.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Grigoriy Blekherman, Pablo A. Parrilo, and Rekha R. Thomas (eds.)</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★☆☆☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            A deep and specialized volume by major figures in semidefinite optimization.
-          </div>
-          <div class="desc">
-            Like variational inequalities, this is a field with fewer researchers but substantial depth.
-          </div>
-          <div class="desc">
-            It is best suited to readers with a strong algebraic background and is not a natural starting point for most beginners.
-          </div>
-        </div>
-      </section>
-
-
-
-      
-      <!-- ========== analysis========== -->
-      <section class="section">
-        <h1>(Non)convex Analysis</h1>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Convex Analysis</div>
-            <a class="access-link" href="https://github.com/sshuoguo/learning/releases/download/LearningBooks/convex-analysis.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">R. Tyrrell Rockafellar</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            One of the great classics on this list.
-          </div>
-          <div class="desc">
-            For optimization and operations research researchers, convex analysis can feel like a dragon-slaying art: abstract, difficult, but immensely powerful.
-          </div>
-          <div class="desc">
-            Even today, many lemmas and theorems from this book continue to generate new research across optimization, OR, management science, mathematics, and computer science.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Variational Analysis</div>
-            <a class="access-link" href="VariationalAnalysis.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">R. Tyrrell Rockafellar and Roger J-B. Wets</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            A monumental follow-up that moves beyond convexity and develops a broad framework for nonconvex analysis.
-          </div>
-          <div class="desc">
-            Like <em>Convex Analysis</em>, it is a masterwork, but it is even more demanding and best approached by readers who already have some maturity in analysis and optimization theory.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Nonlinear Programming</div>
-            <a class="access-link" href="Nonlinearprogramming.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Dimitri P. Bertsekas</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            Although the title suggests optimization, this book is in many ways also a book about analysis.
-          </div>
-          <div class="desc">
-            Bertsekas develops nonlinear programming with substantial analytical depth, making it valuable for readers who want more than a purely algorithmic treatment.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Convex Optimization Theory</div>
-            <a class="access-link" href="https://web.mit.edu/dimitrib/www/Convex_Theory_Entire_Book.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Dimitri P. Bertsekas</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            A rigorous and analysis-heavy treatment of convex optimization.
-          </div>
-          <div class="desc">
-            Despite the title, this is closer in spirit to convex analysis than to a standard algorithms text, and is particularly rewarding for readers who prefer a more theoretical and abstract viewpoint.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Convex Optimization Algorithms</div>
-            <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Dimitri P. Bertsekas</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★☆☆</span></span>
-          </div>
-          <div class="desc">
-            The most accessible of Bertsekas’s major convex optimization books.
-          </div>
-          <div class="desc">
-            The viewpoint remains analytical, but the presentation is more algorithmically oriented and easier to enter than his more theory-focused texts.
-          </div>
-        </div>
-      </section>
-
-
-
-      
-      <!-- ========== prob========== -->
-      <section class="section">
-        <h1>Probability for Optimization</h1>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Introduction to Probability</div>
-            <a class="access-link" href="https://www.vfu.bg/en/e-Learning/Math--Bertsekas_Tsitsiklis_Introduction_to_probability.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Dimitri P. Bertsekas and John N. Tsitsiklis</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★☆☆☆</span></span>
-          </div>
-          <div class="desc">
-            A very accessible introduction to probability, suitable even for first-year undergraduates.
-          </div>
-          <div class="desc">
-            It avoids measure theory but does an excellent job of building probabilistic intuition, which is often just as important as formalism in early study.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Probability: Theory and Examples</div>
-            <a class="access-link" href="https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Rick Durrett</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★★</span></span>
-          </div>
-          <div class="desc">
-            A standard and highly respected measure-theoretic probability text.
-          </div>
-          <div class="desc">
-            For research-oriented readers, especially those who need martingale methods and modern probability, this is an excellent choice—though it asks for more mathematical maturity than many alternatives.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Bandit Algorithms</div>
-            <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Tor Lattimore and Csaba Szepesvári</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            A very strong modern reference on multi-armed bandits, bringing together a large body of theoretical results in one place.
-          </div>
-          <div class="desc">
-            Bandits remain lively, with strong links to reinforcement learning and growing industrial relevance.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Introduction to Multi-Armed Bandits</div>
-            <a class="access-link" href="https://arxiv.org/abs/1904.07272" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Aleksandrs Slivkins</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★☆☆</span></span>
-          </div>
-          <div class="desc">
-            A more accessible alternative to <em>Bandit Algorithms</em>.
-          </div>
-          <div class="desc">
-            It is less comprehensive, but still a very good entry point before moving to the fuller treatment.
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h1>Dynamic Programming, Optimal Control, and Reinforcement Learning</h1>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Neuro-Dynamic Programming</div>
-            <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Dimitri P. Bertsekas and John N. Tsitsiklis</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            One of the most underrated books in this area.
-          </div>
-          <div class="desc">
-            Long before deep reinforcement learning became fashionable, this book already developed a framework for approximating value functions and policies with function approximators.
-          </div>
-          <div class="desc">
-            It remains deeply relevant for readers who want a theory-oriented view of RL and dynamic programming.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Dynamic Programming and Optimal Control</div>
-            <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Dimitri P. Bertsekas</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★☆☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            A comprehensive and influential treatment of dynamic programming and optimal control.
-          </div>
-          <div class="desc">
-            It is extensive and detailed, making it a standard reference, though some readers may prefer a shorter and more conceptually concentrated entry point.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Abstract Dynamic Programming</div>
-            <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Dimitri P. Bertsekas</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-gold">★★★★★</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            A concise and high-level treatment of dynamic programming from an operator-theoretic viewpoint.
-          </div>
-          <div class="desc">
-            For readers who want to understand what dynamic programming is really doing at a structural level, this is exceptionally insightful.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="book-title">Approximate Dynamic Programming: Solving the Curses of Dimensionality</div>
-            <a class="access-link" href=".pdf" target="_blank">[PDF]</a>
-          </div>
-          <div class="author">Warren B. Powell</div>
-          <div class="meta">
-            <span><strong>Recommendation:</strong> <span class="stars-green">★★★★☆</span></span>
-            <span><strong>Difficulty:</strong> <span class="stars-red">★★★★☆</span></span>
-          </div>
-          <div class="desc">
-            A major book on approximate dynamic programming by one of the central figures in the field.
-          </div>
-          <div class="desc">
-            The tone is generally more approachable than Bertsekas, and it is a valuable companion for readers interested in large-scale sequential decision problems and approximation methods.
-          </div>
-        </div>
-      </section>
     </div>
   </main>
 </body>
